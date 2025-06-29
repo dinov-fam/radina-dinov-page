@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radina Dinov - Finance Professional</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            width: 100%;
+            max-width: 1200px;
+            position: relative;
+            animation: gradientShift 8s ease infinite;
+            background-size: 200% 200%;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"/></svg>');
+            background-size: 30px;
+            opacity: 0.6;
+            z-index: 1;
+        }
+        
+        .hero-content {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 40px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .profile-image {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .profile-image img {
+            width: 100%;
+            max-width: 320px;
+            height: auto;
+            border-radius: 50%;
+            border: 6px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            transition: transform 0.5s ease;
+        }
+        
+        .profile-image img:hover {
+            transform: scale(1.05);
+        }
+        
+        .text-content {
+            flex: 2;
+            min-width: 300px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            color: #006400;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+            animation: slideIn 1s ease-out;
+        }
+        
+        h1::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100px;
+            height: 4px;
+            background: #006400;
+            border-radius: 2px;
+        }
+        
+        .subtitle {
+            font-size: 1.6rem;
+            color: #006400;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            line-height: 1.4;
+            animation: fadeIn 1.5s ease-out;
+        }
+        
+        .title-highlight {
+            color: #004d00;
+            font-weight: 700;
+            position: relative;
+        }
+        
+        .title-highlight::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: #004d00;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease;
+        }
+        
+        .title-highlight:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #006400;
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 100, 0, 0.3);
+            max-width: 250px;
+            text-align: center;
+            animation: pulse 2s infinite;
+        }
+        
+        .btn:hover {
+            background: #004d00;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 100, 0, 0.4);
+        }
+        
+        .btn i {
+            margin-right: 10px;
+        }
+        
+        .social-icons {
+            display: flex;
+            margin-top: 25px;
+            gap: 15px;
+        }
+        
+        .social-icons a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.8);
+            color: #006400;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .social-icons a:hover {
+            transform: translateY(-5px);
+            background: #006400;
+            color: white;
+            box-shadow: 0 5px 15px rgba(0, 100, 0, 0.3);
+        }
+        
+        .badges {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+        
+        .badge {
+            background: rgba(0, 100, 0, 0.1);
+            color: #006400;
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 2px solid rgba(0, 100, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .badge:hover {
+            background: rgba(0, 100, 0, 0.2);
+            transform: translateY(-3px);
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateX(-50px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 0.9; }
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(0, 100, 0, 0.5); }
+            70% { box-shadow: 0 0 0 15px rgba(0, 100, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 100, 0, 0); }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            h1::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .text-content {
+                align-items: center;
+            }
+            
+            h1 {
+                font-size: 2.8rem;
+            }
+            
+            .subtitle {
+                font-size: 1.3rem;
+            }
+            
+            .social-icons {
+                justify-content: center;
+            }
+            
+            .badges {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-content">
+            <div class="profile-image">
+                <!-- Profile image with green accent overlay -->
+                <div style="position: relative;">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Radina Dinov">
+                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 50%; background: rgba(0, 100, 0, 0.1);"></div>
+                </div>
+            </div>
+            <div class="text-content">
+                <h1>Radina Dinov</h1>
+                <p class="subtitle">
+                    <span class="title-highlight">MSU Finance Student</span> | 
+                    <span class="title-highlight">Broad Student Team Leader</span> | 
+                    <span class="title-highlight">IBC Researcher</span>
+                </p>
+                <a href="#contact" class="btn">
+                    <i class="fas fa-envelope"></i> Get in Touch
+                </a>
+                
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+                
+                <div class="badges">
+                    <div class="badge">Financial Analysis</div>
+                    <div class="badge">Team Leadership</div>
+                    <div class="badge">Research</div>
+                    <div class="badge">Strategic Planning</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple animation on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.profile-image, h1, .subtitle, .btn, .social-icons, .badges');
+            
+            elements.forEach((el, index) => {
+                setTimeout(() => {
+                    el.style.opacity = "1";
+                    el.style.transform = "translateY(0)";
+                }, 200 * index);
+            });
+        });
+    </script>
+</body>
+</html>
